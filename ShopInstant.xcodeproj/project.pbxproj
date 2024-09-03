@@ -19,6 +19,10 @@
 		92D510632C86BDD40024BADC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 92D510622C86BDD40024BADC /* Localizable.xcstrings */; };
 		92D510652C86BE740024BADC /* LozalizableString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510642C86BE740024BADC /* LozalizableString.swift */; };
 		92D5106C2C86BF4F0024BADC /* MainContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5106B2C86BF4F0024BADC /* MainContainerViewModel.swift */; };
+		92D510712C870F470024BADC /* ShopsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510702C870F470024BADC /* ShopsView.swift */; };
+		92D510742C870F550024BADC /* ShopsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510732C870F550024BADC /* ShopsViewModel.swift */; };
+		92D510772C870F6C0024BADC /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510762C870F6C0024BADC /* TransactionsView.swift */; };
+		92D5107A2C870F800024BADC /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510792C870F800024BADC /* TransactionsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,10 @@
 		92D510622C86BDD40024BADC /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		92D510642C86BE740024BADC /* LozalizableString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LozalizableString.swift; sourceTree = "<group>"; };
 		92D5106B2C86BF4F0024BADC /* MainContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainerViewModel.swift; sourceTree = "<group>"; };
+		92D510702C870F470024BADC /* ShopsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsView.swift; sourceTree = "<group>"; };
+		92D510732C870F550024BADC /* ShopsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsViewModel.swift; sourceTree = "<group>"; };
+		92D510762C870F6C0024BADC /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
+		92D510792C870F800024BADC /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +184,8 @@
 		92D510672C86BF230024BADC /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				92D5106E2C870F350024BADC /* Transactions */,
+				92D5106D2C870EDD0024BADC /* Shops */,
 				92D510682C86BF290024BADC /* MainContainer */,
 			);
 			path = Feature;
@@ -202,6 +212,56 @@
 			isa = PBXGroup;
 			children = (
 				92D5106B2C86BF4F0024BADC /* MainContainerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		92D5106D2C870EDD0024BADC /* Shops */ = {
+			isa = PBXGroup;
+			children = (
+				92D510722C870F4C0024BADC /* ViewModel */,
+				92D5106F2C870F400024BADC /* View */,
+			);
+			path = Shops;
+			sourceTree = "<group>";
+		};
+		92D5106E2C870F350024BADC /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				92D510782C870F710024BADC /* ViewModel */,
+				92D510752C870F620024BADC /* View */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		92D5106F2C870F400024BADC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92D510702C870F470024BADC /* ShopsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92D510722C870F4C0024BADC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				92D510732C870F550024BADC /* ShopsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		92D510752C870F620024BADC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92D510762C870F6C0024BADC /* TransactionsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92D510782C870F710024BADC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				92D510792C870F800024BADC /* TransactionsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -340,10 +400,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D510712C870F470024BADC /* ShopsView.swift in Sources */,
 				92D510652C86BE740024BADC /* LozalizableString.swift in Sources */,
+				92D510742C870F550024BADC /* ShopsViewModel.swift in Sources */,
+				92D5107A2C870F800024BADC /* TransactionsViewModel.swift in Sources */,
 				92D510342C86B4B90024BADC /* MainContainerView.swift in Sources */,
 				92D510322C86B4B90024BADC /* ShopInstantApp.swift in Sources */,
 				92D5106C2C86BF4F0024BADC /* MainContainerViewModel.swift in Sources */,
+				92D510772C870F6C0024BADC /* TransactionsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
