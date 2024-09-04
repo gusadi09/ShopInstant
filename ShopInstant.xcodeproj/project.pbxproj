@@ -23,6 +23,8 @@
 		92D510742C870F550024BADC /* ShopsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510732C870F550024BADC /* ShopsViewModel.swift */; };
 		92D510772C870F6C0024BADC /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510762C870F6C0024BADC /* TransactionsView.swift */; };
 		92D5107A2C870F800024BADC /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510792C870F800024BADC /* TransactionsViewModel.swift */; };
+		92D5107E2C87FD640024BADC /* OfferCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5107D2C87FD640024BADC /* OfferCard.swift */; };
+		92D510812C87FD940024BADC /* WebImageLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510802C87FD940024BADC /* WebImageLoaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		92D510732C870F550024BADC /* ShopsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsViewModel.swift; sourceTree = "<group>"; };
 		92D510762C870F6C0024BADC /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 		92D510792C870F800024BADC /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
+		92D5107D2C87FD640024BADC /* OfferCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCard.swift; sourceTree = "<group>"; };
+		92D510802C87FD940024BADC /* WebImageLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageLoaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 		92D5105B2C86BB8F0024BADC /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				92D5107B2C87FD530024BADC /* Component */,
 				92D510662C86BF100024BADC /* Base */,
 				92D5105C2C86BB960024BADC /* Resources */,
 			);
@@ -264,6 +269,31 @@
 				92D510792C870F800024BADC /* TransactionsViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		92D5107B2C87FD530024BADC /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				92D5107F2C87FD820024BADC /* ImageLoader */,
+				92D5107C2C87FD5B0024BADC /* Card */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		92D5107C2C87FD5B0024BADC /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				92D5107D2C87FD640024BADC /* OfferCard.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		92D5107F2C87FD820024BADC /* ImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				92D510802C87FD940024BADC /* WebImageLoaderView.swift */,
+			);
+			path = ImageLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,9 +434,11 @@
 				92D510652C86BE740024BADC /* LozalizableString.swift in Sources */,
 				92D510742C870F550024BADC /* ShopsViewModel.swift in Sources */,
 				92D5107A2C870F800024BADC /* TransactionsViewModel.swift in Sources */,
+				92D510812C87FD940024BADC /* WebImageLoaderView.swift in Sources */,
 				92D510342C86B4B90024BADC /* MainContainerView.swift in Sources */,
 				92D510322C86B4B90024BADC /* ShopInstantApp.swift in Sources */,
 				92D5106C2C86BF4F0024BADC /* MainContainerViewModel.swift in Sources */,
+				92D5107E2C87FD640024BADC /* OfferCard.swift in Sources */,
 				92D510772C870F6C0024BADC /* TransactionsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
