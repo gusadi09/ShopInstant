@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct OfferCard: View {
+    let items: ShopsViewModel.PresentModel
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             GeometryReader(content: { geometry in
                 WebImageLoaderView(
-                    url: "test",
+                    url: items.picture,
                     width: geometry.size.width,
                     height: 120,
                     aspectRatio: .fit
@@ -22,17 +24,17 @@ struct OfferCard: View {
             })
             .frame(height: 120)
             
-            Text("Title With 2 Lines Here")
+            Text(items.title)
                 .font(.system(size: 16, weight: .bold))
-                .lineLimit(2)
+                .lineLimit(1)
             
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 10) {
-                    Text("Rp 15.000")
+                    Text(items.price.currency)
                         .strikethrough(true, pattern: .solid, color: .red)
                         .font(.system(size: 12, weight: .regular))
                     
-                    Text("10%")
+                    Text("\(items.discount)%")
                         .font(.system(size: 10, weight: .semibold))
                         .foregroundStyle(.pink)
                         .padding(4)
@@ -42,7 +44,7 @@ struct OfferCard: View {
                         )
                 }
                 
-                Text("Rp 10.000")
+                Text(priceAfterDisc(price: items.price, disc: items.discount))
                     .font(.system(size: 14, weight: .bold))
                     .foregroundStyle(.red)
             }
@@ -56,6 +58,11 @@ struct OfferCard: View {
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .shadow(color: .black.opacity(0.1), radius: 6)
     }
+    
+    func priceAfterDisc(price: String, disc: Int) -> String {
+        let count = (Int(price) ?? 0) - (((Int(price) ?? 0) * disc / 100))
+        return String(count).currency
+    }
 }
 
 #Preview {
@@ -63,7 +70,7 @@ struct OfferCard: View {
         GeometryReader(content: { geometry in
             LazyVGrid(columns: [GridItem(.flexible(minimum: 60, maximum: geometry.size.width)), GridItem(.flexible(minimum: 60, maximum: geometry.size.width))], spacing: 15, content: {
                 ForEach(1...4, id: \.self) { item in
-                    OfferCard()
+                    OfferCard(items: ShopsViewModel.PresentModel(title: "test", price: "10000", discount: 10))
                         .padding(item % 2 == 0 ? .leading : .trailing, 5)
                 }
             })

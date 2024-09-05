@@ -10,9 +10,44 @@ import SwiftUI
 struct ShopsView: View {
     
     @StateObject var viewModel = ShopsViewModel()
+    @State var height: CGFloat = 1
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader(content: { geometry in
+            NavigationStack {
+                ScrollView {
+                    LazyVGrid(
+                        columns: [
+                            GridItem(.flexible(
+                                minimum: 60,
+                                maximum: geometry.size.width)
+                            ),
+                            GridItem(.flexible(
+                                minimum: 60,
+                                maximum: geometry.size.width)
+                            )
+                        ],
+                        spacing: 15,
+                        content: {
+                            ForEach(viewModel.items, id: \.id) { item in
+                                OfferCard(items: item)
+                                    .onTapGesture {
+                                        viewModel.selectedItem = item
+                                    }
+                                    .sheet(item: $viewModel.selectedItem) { item in
+                                        DetailOfferView(item: item) {
+                                            
+                                        }
+                                    }
+                            }
+                        }
+                    )
+                    .padding()
+                }
+                .navigationTitle(LocalizableString.Offers.offers)
+                .navigationBarTitleDisplayMode(.large)
+            }
+        })
     }
 }
 

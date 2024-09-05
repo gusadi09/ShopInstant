@@ -1,25 +1,62 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "hello_world" : {
+    "%lld%%" : {
+
+    },
+    "buy_now" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hello World!"
+            "value" : "Buy Now!"
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Halo Dunia!"
+            "value" : "Beli Sekarang!"
           }
         }
       }
     },
-    "Hello, World!" : {
+    "offers" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Offers"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penawaran"
+          }
+        }
+      }
+    },
+    "Submit" : {
 
+    },
+    "transactions" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transactions"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transaksi"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

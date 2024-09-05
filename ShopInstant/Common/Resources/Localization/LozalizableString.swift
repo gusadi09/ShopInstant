@@ -8,7 +8,12 @@
 import Foundation
 
 enum LocalizableString {
-    enum General {
-        static let helloWorld = String(localized: "hello_world")
+    enum Offers {
+        static let offers = String(localized: "offers")
+        static let buyNow = String(localized: "buy_now")
+    }
+    
+    enum Transactions {
+        static let transactions = String(localized: "transactions")
     }
 }

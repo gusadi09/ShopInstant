@@ -12,7 +12,11 @@ struct TransactionsView: View {
     @StateObject var viewModel = TransactionsViewModel()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            Text(LocalizableString.Transactions.transactions)
+                .navigationTitle(LocalizableString.Transactions.transactions)
+                .navigationBarTitleDisplayMode(.large)
+        }
     }
 }
 

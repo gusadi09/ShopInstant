@@ -12,13 +12,19 @@ struct MainContainerView: View {
     @StateObject var viewModel = MainContainerViewModel()
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text(LocalizableString.General.helloWorld)
+        TabView {
+            ShopsView()
+                .tabItem {
+                    Image(systemName: "handbag.fill")
+                    Text(LocalizableString.Offers.offers)
+                }
+            
+            TransactionsView()
+                .tabItem {
+                    Image(systemName: "list.bullet.clipboard.fill")
+                    Text(LocalizableString.Transactions.transactions)
+                }
         }
-        .padding()
     }
 }
 
