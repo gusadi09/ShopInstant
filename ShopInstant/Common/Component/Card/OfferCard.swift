@@ -14,39 +14,43 @@ struct OfferCard: View {
         VStack(alignment: .leading, spacing: 8) {
             GeometryReader(content: { geometry in
                 WebImageLoaderView(
-                    url: items.picture,
+                    url: items.picture ?? "empty",
                     width: geometry.size.width,
                     height: 120,
-                    aspectRatio: .fit
+                    aspectRatio: .fill
                 )
                 .frame(width: geometry.size.width, height: 120)
                 .background(RoundedRectangle(cornerRadius: 12).foregroundColor(.gray))
             })
             .frame(height: 120)
             
-            Text(items.title)
+            Text(items.title ?? "")
                 .font(.system(size: 16, weight: .bold))
                 .lineLimit(1)
             
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 10) {
-                    Text(items.price.currency)
+                    Text(items.price?.currency ?? "")
                         .strikethrough(true, pattern: .solid, color: .red)
                         .font(.system(size: 12, weight: .regular))
                     
-                    Text("\(items.discount)%")
-                        .font(.system(size: 10, weight: .semibold))
-                        .foregroundStyle(.pink)
-                        .padding(4)
-                        .background(
-                            RoundedRectangle(cornerRadius: 5)
-                                .foregroundStyle(.red.opacity(0.2))
-                        )
+                    if let discount = items.discount {
+                        Text("\(discount)%")
+                            .font(.system(size: 10, weight: .semibold))
+                            .foregroundStyle(.pink)
+                            .padding(4)
+                            .background(
+                                RoundedRectangle(cornerRadius: 5)
+                                    .foregroundStyle(.red.opacity(0.2))
+                            )
+                    }
                 }
                 
-                Text(priceAfterDisc(price: items.price, disc: items.discount))
-                    .font(.system(size: 14, weight: .bold))
-                    .foregroundStyle(.red)
+                if let discount = items.discount {
+                    Text(priceAfterDisc(price: items.price ?? "", disc: discount))
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundStyle(.red)
+                }
             }
         }
         .padding([.top, .horizontal], 8)
@@ -70,7 +74,7 @@ struct OfferCard: View {
         GeometryReader(content: { geometry in
             LazyVGrid(columns: [GridItem(.flexible(minimum: 60, maximum: geometry.size.width)), GridItem(.flexible(minimum: 60, maximum: geometry.size.width))], spacing: 15, content: {
                 ForEach(1...4, id: \.self) { item in
-                    OfferCard(items: ShopsViewModel.PresentModel(title: "test", price: "10000", discount: 10))
+                    OfferCard(items: ShopsViewModel.PresentModel(title: "test", picture: "https://images.tennis.com/image/private/t_16-9_768/tenniscom-prd/bxdgpnfje6infmzwwix6.jpg", price: "10000", discount: 10, desc: ""))
                         .padding(item % 2 == 0 ? .leading : .trailing, 5)
                 }
             })
