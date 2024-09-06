@@ -69,7 +69,7 @@ struct ShopsView: View {
                         }
                     }
                     .refreshable {
-                        await viewModel.fetchOffers()
+                        viewModel.refreshOffers()
                     }
                     .alert(isPresented: $viewModel.error.0, content: {
                         Alert(
