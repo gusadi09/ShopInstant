@@ -17,52 +17,51 @@ final class AppTests: XCTestCase {
         self.app = nil
     }
     
-    func testHelloWorld() async throws {
-        try await self.app.test(.GET, "hello", afterResponse: { res async in
-            XCTAssertEqual(res.status, .ok)
-            XCTAssertEqual(res.body.string, "Hello, world!")
-        })
-    }
-    
     func testTodoIndex() async throws {
-        let sampleTodos = [Todo(title: "sample1"), Todo(title: "sample2")]
-        try await sampleTodos.create(on: self.app.db)
+        let sampleOffers = [
+            Offer(offerName: "Sample Offer 1", offerImageUrl: "https://images.tennis.com/image/private/t_16-9_768/tenniscom-prd/bxdgpnfje6infmzwwix6.jpg", offerPrice: "3200000", offerDiscount: 10, offerDesc: "Sample Desc of Offer"),
+            Offer(offerName: "Sample Offer 2", offerImageUrl: "https://media.istockphoto.com/id/1271796113/photo/women-is-holding-handbag-near-luxury-car.jpg?s=612x612&w=0&k=20&c=-jtXLmexNgRa-eKqA1X8UJ8QYWhW7XgDiWNmzuuCHmM=", offerPrice: "3200000", offerDiscount: 10, offerDesc: "Sample Desc of Offer"),
+        ]
+        try await sampleOffers.create(on: self.app.db)
         
-        try await self.app.test(.GET, "todos", afterResponse: { res async throws in
+        try await self.app.test(.GET, "offers", afterResponse: { res async throws in
             XCTAssertEqual(res.status, .ok)
             XCTAssertEqual(
-                try res.content.decode([TodoDTO].self).sorted(by: { $0.title ?? "" < $1.title ?? "" }),
-                sampleTodos.map { $0.toDTO() }.sorted(by: { $0.title ?? "" < $1.title ?? "" })
+                try res.content.decode([OfferDTO].self).sorted(by: { $0.offerName ?? "" < $1.offerName ?? "" }),
+                sampleOffers.map { $0.toDTO() }.sorted(by: { $0.offerName ?? "" < $1.offerName ?? "" })
             )
         })
     }
     
     func testTodoCreate() async throws {
-        let newDTO = TodoDTO(id: nil, title: "test")
+        let newDTO = OfferDTO(id: UUID(), offerName: "Sample Offer 1", offerImageUrl: "https://images.tennis.com/image/private/t_16-9_768/tenniscom-prd/bxdgpnfje6infmzwwix6.jpg", offerPrice: "3200000", offerDiscount: 10, offerDesc: "Sample Desc of Offer")
         
-        try await self.app.test(.POST, "todos", beforeRequest: { req in
+        try await self.app.test(.POST, "offers", beforeRequest: { req in
             try req.content.encode(newDTO)
         }, afterResponse: { res async throws in
             XCTAssertEqual(res.status, .ok)
-            let models = try await Todo.query(on: self.app.db).all()
-            XCTAssertEqual(models.map { $0.toDTO().title }, [newDTO.title])
+            let models = try await Offer.query(on: self.app.db).all()
+            XCTAssertEqual(models.map { $0.toDTO().offerName }, [newDTO.offerName])
         })
     }
     
     func testTodoDelete() async throws {
-        let testTodos = [Todo(title: "test1"), Todo(title: "test2")]
-        try await testTodos.create(on: app.db)
+        let sampleOffers = [
+            Offer(offerName: "Sample Offer 1", offerImageUrl: "https://images.tennis.com/image/private/t_16-9_768/tenniscom-prd/bxdgpnfje6infmzwwix6.jpg", offerPrice: "3200000", offerDiscount: 10, offerDesc: "Sample Desc of Offer"),
+            Offer(offerName: "Sample Offer 2", offerImageUrl: "https://media.istockphoto.com/id/1271796113/photo/women-is-holding-handbag-near-luxury-car.jpg?s=612x612&w=0&k=20&c=-jtXLmexNgRa-eKqA1X8UJ8QYWhW7XgDiWNmzuuCHmM=", offerPrice: "3200000", offerDiscount: 10, offerDesc: "Sample Desc of Offer"),
+        ]
+        try await sampleOffers.create(on: app.db)
         
-        try await self.app.test(.DELETE, "todos/\(testTodos[0].requireID())", afterResponse: { res async throws in
+        try await self.app.test(.DELETE, "offers/\(sampleOffers[0].requireID())", afterResponse: { res async throws in
             XCTAssertEqual(res.status, .noContent)
-            let model = try await Todo.find(testTodos[0].id, on: self.app.db)
+            let model = try await Offer.find(sampleOffers[0].id, on: self.app.db)
             XCTAssertNil(model)
         })
     }
 }
 
-extension TodoDTO: Equatable {
+extension OfferDTO: Equatable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
-        lhs.id == rhs.id && lhs.title == rhs.title
+        lhs.id == rhs.id && lhs.offerName == rhs.offerName
     }
 }
