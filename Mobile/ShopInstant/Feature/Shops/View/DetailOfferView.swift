@@ -10,6 +10,7 @@ import SwiftUI
 struct DetailOfferView: View {
     @Binding var isLoading: Bool
     @Binding var isSuccess: Bool
+    @Binding var error: (Bool, String?)
     let item: ShopsViewModel.PresentModel
     let buyAction: () -> Void
     
@@ -29,6 +30,13 @@ struct DetailOfferView: View {
                             .background(RoundedRectangle(cornerRadius: 12).foregroundColor(.gray))
                         })
                         .frame(height: 250)
+                        .alert(isPresented: $error.0, content: {
+                            Alert(
+                                title: Text(LocalizableString.General.attention),
+                                message: Text(error.1 ?? ""),
+                                dismissButton: .default(Text(LocalizableString.General.ok))
+                            )
+                        })
                         
                         Text(item.title ?? "")
                             .font(.system(size: 24, weight: .bold))
@@ -101,5 +109,5 @@ struct DetailOfferView: View {
 }
 
 #Preview {
-    DetailOfferView(isLoading: .constant(false), isSuccess: .constant(false), item: ShopsViewModel.PresentModel(title: "test", picture: "", price: "10000", discount: 10, desc: ""), buyAction: {})
+    DetailOfferView(isLoading: .constant(false), isSuccess: .constant(false), error: .constant((false, nil)), item: ShopsViewModel.PresentModel(title: "test", picture: "", price: "10000", discount: 10, desc: ""), buyAction: {})
 }

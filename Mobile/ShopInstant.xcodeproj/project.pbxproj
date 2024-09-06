@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92BBB81A2C8B84240073323C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BBB8192C8B84240073323C /* Transaction.swift */; };
+		92BBB81D2C8B84920073323C /* TransactionsRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BBB81C2C8B84920073323C /* TransactionsRemoteDataSource.swift */; };
+		92BBB81F2C8B849E0073323C /* TransactionsDefaultRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BBB81E2C8B849E0073323C /* TransactionsDefaultRemoteDataSource.swift */; };
+		92BBB8212C8B91020073323C /* DetailTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BBB8202C8B91020073323C /* DetailTransactionView.swift */; };
 		92D510322C86B4B90024BADC /* ShopInstantApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510312C86B4B90024BADC /* ShopInstantApp.swift */; };
 		92D510342C86B4B90024BADC /* MainContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510332C86B4B90024BADC /* MainContainerView.swift */; };
 		92D510362C86B4BA0024BADC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92D510352C86B4BA0024BADC /* Assets.xcassets */; };
@@ -14,8 +18,6 @@
 		92D510432C86B4BA0024BADC /* ShopInstantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510422C86B4BA0024BADC /* ShopInstantTests.swift */; };
 		92D5104D2C86B4BA0024BADC /* ShopInstantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5104C2C86B4BA0024BADC /* ShopInstantUITests.swift */; };
 		92D5104F2C86B4BA0024BADC /* ShopInstantUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5104E2C86B4BA0024BADC /* ShopInstantUITestsLaunchTests.swift */; };
-		92D5105E2C86BBB30024BADC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92D5105D2C86BBB30024BADC /* Images.xcassets */; };
-		92D510602C86BBBB0024BADC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92D5105F2C86BBBB0024BADC /* Colors.xcassets */; };
 		92D510632C86BDD40024BADC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 92D510622C86BDD40024BADC /* Localizable.xcstrings */; };
 		92D510652C86BE740024BADC /* LozalizableString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510642C86BE740024BADC /* LozalizableString.swift */; };
 		92D5106C2C86BF4F0024BADC /* MainContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5106B2C86BF4F0024BADC /* MainContainerViewModel.swift */; };
@@ -59,6 +61,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		92BBB8192C8B84240073323C /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		92BBB81C2C8B84920073323C /* TransactionsRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRemoteDataSource.swift; sourceTree = "<group>"; };
+		92BBB81E2C8B849E0073323C /* TransactionsDefaultRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsDefaultRemoteDataSource.swift; sourceTree = "<group>"; };
+		92BBB8202C8B91020073323C /* DetailTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransactionView.swift; sourceTree = "<group>"; };
 		92D5102E2C86B4B90024BADC /* ShopInstant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopInstant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D510312C86B4B90024BADC /* ShopInstantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopInstantApp.swift; sourceTree = "<group>"; };
 		92D510332C86B4B90024BADC /* MainContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainerView.swift; sourceTree = "<group>"; };
@@ -69,8 +75,6 @@
 		92D510482C86B4BA0024BADC /* ShopInstantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShopInstantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D5104C2C86B4BA0024BADC /* ShopInstantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopInstantUITests.swift; sourceTree = "<group>"; };
 		92D5104E2C86B4BA0024BADC /* ShopInstantUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopInstantUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		92D5105D2C86BBB30024BADC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		92D5105F2C86BBBB0024BADC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		92D510622C86BDD40024BADC /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		92D510642C86BE740024BADC /* LozalizableString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LozalizableString.swift; sourceTree = "<group>"; };
 		92D5106B2C86BF4F0024BADC /* MainContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainerViewModel.swift; sourceTree = "<group>"; };
@@ -122,6 +126,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92BBB81B2C8B84840073323C /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				92BBB81C2C8B84920073323C /* TransactionsRemoteDataSource.swift */,
+				92BBB81E2C8B849E0073323C /* TransactionsDefaultRemoteDataSource.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
 		92D510252C86B4B90024BADC = {
 			isa = PBXGroup;
 			children = (
@@ -197,8 +210,6 @@
 			children = (
 				92D510612C86BBC60024BADC /* Localization */,
 				92D510352C86B4BA0024BADC /* Assets.xcassets */,
-				92D5105D2C86BBB30024BADC /* Images.xcassets */,
-				92D5105F2C86BBBB0024BADC /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -294,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				92D510762C870F6C0024BADC /* TransactionsView.swift */,
+				92BBB8202C8B91020073323C /* DetailTransactionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -361,6 +373,7 @@
 		92D5109C2C8995E70024BADC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				92BBB81B2C8B84840073323C /* Transactions */,
 				92D510B72C8AF0420024BADC /* Model */,
 				92D510B12C8AEFCF0024BADC /* Offers */,
 				92D510AC2C8AEF0A0024BADC /* Utils */,
@@ -408,6 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				92D510B82C8AF04D0024BADC /* Offer.swift */,
+				92BBB8192C8B84240073323C /* Transaction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -523,8 +537,6 @@
 			files = (
 				92D510392C86B4BA0024BADC /* Preview Assets.xcassets in Resources */,
 				92D510632C86BDD40024BADC /* Localizable.xcstrings in Resources */,
-				92D510602C86BBBB0024BADC /* Colors.xcassets in Resources */,
-				92D5105E2C86BBB30024BADC /* Images.xcassets in Resources */,
 				92D510362C86B4BA0024BADC /* Assets.xcassets in Resources */,
 				92D510922C896BCD0024BADC /* GoogleService-Info.plist in Resources */,
 			);
@@ -552,8 +564,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				92D510B02C8AEF480024BADC /* HTTPMethod.swift in Sources */,
+				92BBB81F2C8B849E0073323C /* TransactionsDefaultRemoteDataSource.swift in Sources */,
 				92D510712C870F470024BADC /* ShopsView.swift in Sources */,
+				92BBB81A2C8B84240073323C /* Transaction.swift in Sources */,
 				92D510842C8945FE0024BADC /* PrimaryButton.swift in Sources */,
+				92BBB81D2C8B84920073323C /* TransactionsRemoteDataSource.swift in Sources */,
 				92D510B42C8AF00D0024BADC /* OffersRemoteDataSource.swift in Sources */,
 				92D510652C86BE740024BADC /* LozalizableString.swift in Sources */,
 				92D510B62C8AF0160024BADC /* OffersDefaultRemoteDataSource.swift in Sources */,
@@ -571,6 +586,7 @@
 				92D510AB2C8A148D0024BADC /* TransactionCard.swift in Sources */,
 				92D5106C2C86BF4F0024BADC /* MainContainerViewModel.swift in Sources */,
 				92D510B92C8AF04D0024BADC /* Offer.swift in Sources */,
+				92BBB8212C8B91020073323C /* DetailTransactionView.swift in Sources */,
 				92D5107E2C87FD640024BADC /* OfferCard.swift in Sources */,
 				92D510772C870F6C0024BADC /* TransactionsView.swift in Sources */,
 				92D510902C89699F0024BADC /* DetailOfferView.swift in Sources */,

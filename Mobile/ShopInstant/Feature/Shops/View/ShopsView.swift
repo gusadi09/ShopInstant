@@ -55,11 +55,10 @@ struct ShopsView: View {
                                                 DetailOfferView(
                                                     isLoading: $viewModel.isLoading,
                                                     isSuccess: $viewModel.successToBuy,
+                                                    error: $viewModel.error,
                                                     item: item
                                                 ) {
-                                                    Task {
-                                                        await viewModel.buyNow(from: item)
-                                                    }
+                                                    viewModel.onBuyPressed(from: item)
                                                 }
                                             }
                                     }

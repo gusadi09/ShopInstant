@@ -18,6 +18,7 @@ final class ShopsViewModel: ObservableObject {
     }
     
     private let dataSource: OffersRemoteDataSource
+    private let trxDataSource: TransactionsRemoteDataSource
     
     @Published var selectedItem: PresentModel?
     @Published var items: [PresentModel] = []
@@ -25,8 +26,12 @@ final class ShopsViewModel: ObservableObject {
     @Published var error: (Bool, String?) = (false, nil)
     @Published var successToBuy = false
     
-    init(dataSource: OffersRemoteDataSource = OffersDefaultRemoteDataSource()) {
+    init(
+        dataSource: OffersRemoteDataSource = OffersDefaultRemoteDataSource(),
+        trxDataSource: TransactionsRemoteDataSource = TransactionsDefaultRemoteDataSource()
+    ) {
         self.dataSource = dataSource
+        self.trxDataSource = trxDataSource
     }
     
     func refreshOffers() {
@@ -34,6 +39,7 @@ final class ShopsViewModel: ObservableObject {
             await fetchOffers()
         }
     }
+    
     @MainActor
     func fetchOffers() async {
         self.isLoading = true
@@ -55,28 +61,35 @@ final class ShopsViewModel: ObservableObject {
         }
     }
     
+    func onBuyPressed(from item: PresentModel) {
+        Task {
+            await buyNow(from: item)
+        }
+    }
+    
+    @MainActor
     func buyNow(from item: PresentModel) async {
         self.isLoading = true
         self.successToBuy = false
         self.error = (false, nil)
         
-//        do {
-//            let data = [
-//                "title": item.title ?? "",
-//                "picture": item.picture ?? "",
-//                "price": item.price ?? "",
-//                "discount": item.discount ?? 0,
-//                "desc": item.desc ?? "",
-//                "status": BuyStatus.onDelivery.rawValue
-//            ] as [String : Any]
-//            
-//            let _ = try await dataSource.add(from: Collection.buyItems.id, with: data)
-//            self.isLoading = false
-//            self.successToBuy = true
-//        } catch {
-//            self.isLoading = false
-//            self.error = (true, error.localizedDescription)
-//            print(error)
-//        }
+        do {
+            let data = TransactionsViewModel.PresentModel(
+                title: item.title,
+                picture: item.picture,
+                price: item.price,
+                discount: item.discount,
+                desc: item.desc,
+                status: 2)
+            
+            let _ = try await trxDataSource.postTransaction(with: data)
+            self.isLoading = false
+            self.successToBuy = true
+        } catch {
+            self.isLoading = false
+            self.successToBuy = false
+            self.error = (true, error.localizedDescription)
+            print(error)
+        }
     }
 }

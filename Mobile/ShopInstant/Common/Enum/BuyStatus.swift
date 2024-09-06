@@ -16,13 +16,13 @@ enum BuyStatus: Int {
     var desc: String {
         switch self {
         case .waitingForPayment:
-            return "Waiting for Payment"
+            return LocalizableString.Transactions.waitingForPayment
         case .processed:
-            return "On Process"
+            return LocalizableString.Transactions.onProcess
         case .onDelivery:
-            return "On Delivery"
+            return LocalizableString.Transactions.onDelivery
         case .delivered:
-            return "Delivered"
+            return LocalizableString.Transactions.delivered
         }
     }
 }

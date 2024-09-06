@@ -23,5 +23,13 @@ enum LocalizableString {
         static let transactions = String(localized: "transactions")
         static let purchasedDetail = String(localized: "purchased_detail")
         static let successPurchased = String(localized: "success_purchased")
+        static let emptyTransaction = String(localized: "empty_transaction")
+        static let waitingForPayment = String(localized: "waiting_for_payment")
+        static let onProcess = String(localized: "on_process")
+        static let onDelivery = String(localized: "on_delivery")
+        static let delivered = String(localized: "delivered")
+        static let subtotal = String(localized: "subtotal")
+        static let discount = String(localized: "discount")
+        static let grandTotal = String(localized: "grand_total")
     }
 }

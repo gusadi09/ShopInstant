@@ -27,5 +27,55 @@ final class TransactionsViewModel: ObservableObject {
             self.status = BuyStatus(rawValue: status ?? 0)
             self.statusDesc = BuyStatus(rawValue: status ?? 0)?.desc
         }
+        
+        func toModel() -> Transaction {
+            Transaction(
+                id: UUID(),
+                itemName: title,
+                itemImageUrl: picture,
+                itemPrice: price,
+                itemDiscount: discount,
+                itemDesc: desc,
+                itemStatus: status?.rawValue
+            )
+        }
+    }
+    
+    private let dataSource: TransactionsRemoteDataSource
+    
+    @Published var selectedItem: PresentModel?
+    @Published var items: [PresentModel] = []
+    @Published var isLoading = false
+    @Published var error: (Bool, String?) = (false, nil)
+    
+    init(dataSource: TransactionsRemoteDataSource = TransactionsDefaultRemoteDataSource()) {
+        self.dataSource = dataSource
+    }
+    
+    func refreshTrxs() {
+        Task {
+            await fetchTrx()
+        }
+    }
+    
+    @MainActor
+    func fetchTrx() async {
+        self.isLoading = true
+        self.error = (false, nil)
+        
+        do {
+            let data = try await dataSource.getTransactions()
+            print(data)
+            self.isLoading = false
+            let mappedItem = data.compactMap {
+                $0.toTransactionPresentModel()
+            }
+            
+            self.items = mappedItem
+        } catch {
+            self.isLoading = false
+            self.error = (true, error.localizedDescription)
+            print(error)
+        }
     }
 }

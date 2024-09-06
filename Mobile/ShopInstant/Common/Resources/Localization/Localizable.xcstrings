@@ -38,6 +38,40 @@
         }
       }
     },
+    "delivered" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delivered"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Telah Sampai Tujuan"
+          }
+        }
+      }
+    },
+    "discount" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Discount"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diskon"
+          }
+        }
+      }
+    },
     "empty_offers" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -51,6 +85,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Saat ini tidak ada penawaran yang dapat ditampilkan. Silahkan refresh atau coba lagi nanti."
+          }
+        }
+      }
+    },
+    "empty_transaction" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There is no current transaction. Please make your transaction first."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saat ini belum ada transaksi. Silahkan lakukan transaksi terlebih dahulu."
+          }
+        }
+      }
+    },
+    "grand_total" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grand Total"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grand Total"
           }
         }
       }
@@ -89,6 +157,40 @@
         }
       }
     },
+    "on_delivery" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On Delivery"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dalam Pengiriman"
+          }
+        }
+      }
+    },
+    "on_process" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On Process"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dalam Proses"
+          }
+        }
+      }
+    },
     "purchased_detail" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -108,6 +210,23 @@
     },
     "Submit" : {
 
+    },
+    "subtotal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subtotal"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subtotal"
+          }
+        }
+      }
     },
     "success_purchased" : {
       "extractionState" : "manual",
@@ -139,6 +258,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Transaksi"
+          }
+        }
+      }
+    },
+    "waiting_for_payment" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waiting for Payment"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menunggu Pembayaran"
           }
         }
       }

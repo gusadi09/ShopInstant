@@ -12,29 +12,53 @@ struct TransactionsView: View {
     @StateObject var viewModel = TransactionsViewModel()
     
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(0...4, id: \.self) { _ in
-                    TransactionCard(
-                        item: TransactionsViewModel.PresentModel(
-                            title: "HEAD Speed MP 100g",
-                            picture: "https://images.tennis.com/image/private/t_16-9_768/tenniscom-prd/bxdgpnfje6infmzwwix6.jpg",
-                            price: "1300000",
-                            discount: 10,
-                            desc: "",
-                            status: 1
-                        )
-                    )
-                    .onTapGesture {
-                        print("test")
+        GeometryReader(content: { geometry in
+            NavigationStack {
+                List {
+                    if viewModel.items.isEmpty {
+                        VStack(spacing: 15) {
+                            Image(systemName: "list.bullet.clipboard.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: geometry.size.width/2)
+                                .foregroundStyle(.gray)
+                            
+                            Text(LocalizableString.Transactions.emptyTransaction)
+                                .font(.system(size: 18, weight: .medium))
+                                .foregroundStyle(.gray)
+                                .multilineTextAlignment(.center)
+                        }
+                        .padding()
+                        .padding(.top, 30)
+                        .listRowSeparator(.hidden)
+                    } else {
+                        ForEach(viewModel.items, id: \.id) { item in
+                            Button {
+                                viewModel.selectedItem = item
+                            } label: {
+                                TransactionCard(
+                                    item: item
+                                )
+                            }
+                            .buttonStyle(.plain)
+                            .listRowInsets(EdgeInsets(top: 20, leading: 18, bottom: 20, trailing: 18))
+                        }
                     }
-                    .listRowInsets(EdgeInsets(top: 20, leading: 18, bottom: 20, trailing: 18))
                 }
+                .refreshable {
+                    viewModel.refreshTrxs()
+                }
+                .sheet(item: $viewModel.selectedItem, content: { item in
+                    DetailTransactionView(item: item)
+                })
+                .listStyle(.plain)
+                .task {
+                    await viewModel.fetchTrx()
+                }
+                .navigationTitle(LocalizableString.Transactions.transactions)
+                .navigationBarTitleDisplayMode(.large)
             }
-            .listStyle(.plain)
-            .navigationTitle(LocalizableString.Transactions.transactions)
-            .navigationBarTitleDisplayMode(.large)
-        }
+        })
     }
 }
 
