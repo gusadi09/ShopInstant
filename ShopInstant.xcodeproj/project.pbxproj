@@ -38,6 +38,7 @@
 		92D510A42C89A2400024BADC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510A32C89A2400024BADC /* LoadingView.swift */; };
 		92D510A72C89A8300024BADC /* BuyStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510A62C89A8300024BADC /* BuyStatus.swift */; };
 		92D510A92C89AB400024BADC /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510A82C89AB400024BADC /* Collection.swift */; };
+		92D510AB2C8A148D0024BADC /* TransactionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510AA2C8A148D0024BADC /* TransactionCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		92D510A32C89A2400024BADC /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		92D510A62C89A8300024BADC /* BuyStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyStatus.swift; sourceTree = "<group>"; };
 		92D510A82C89AB400024BADC /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		92D510AA2C8A148D0024BADC /* TransactionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				92D5107D2C87FD640024BADC /* OfferCard.swift */,
+				92D510AA2C8A148D0024BADC /* TransactionCard.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				92D510342C86B4B90024BADC /* MainContainerView.swift in Sources */,
 				92D5109F2C8996040024BADC /* FirestoreDataSource.swift in Sources */,
 				92D510322C86B4B90024BADC /* ShopInstantApp.swift in Sources */,
+				92D510AB2C8A148D0024BADC /* TransactionCard.swift in Sources */,
 				92D5106C2C86BF4F0024BADC /* MainContainerViewModel.swift in Sources */,
 				92D5107E2C87FD640024BADC /* OfferCard.swift in Sources */,
 				92D510772C870F6C0024BADC /* TransactionsView.swift in Sources */,

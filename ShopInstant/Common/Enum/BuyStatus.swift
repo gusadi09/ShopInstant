@@ -12,4 +12,17 @@ enum BuyStatus: Int {
     case processed = 2
     case onDelivery = 3
     case delivered = 4
+    
+    var desc: String {
+        switch self {
+        case .waitingForPayment:
+            return "Waiting for Payment"
+        case .processed:
+            return "On Process"
+        case .onDelivery:
+            return "On Delivery"
+        case .delivered:
+            return "Delivered"
+        }
+    }
 }
