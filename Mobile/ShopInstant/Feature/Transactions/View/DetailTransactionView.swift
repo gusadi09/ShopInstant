@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailTransactionView: View {
-    let item: TransactionsViewModel.PresentModel
+    @StateObject var viewModel: DetailTransactionsViewModel
     
     var body: some View {
         ZStack {
@@ -17,7 +17,7 @@ struct DetailTransactionView: View {
                     LazyVStack(alignment: .leading, spacing: 10) {
                         GeometryReader(content: { geometry in
                             WebImageLoaderView(
-                                url: item.picture ?? "empty",
+                                url: viewModel.item.picture ?? "empty",
                                 width: geometry.size.width,
                                 height: geometry.size.height,
                                 aspectRatio: .fill
@@ -27,11 +27,11 @@ struct DetailTransactionView: View {
                         })
                         .frame(height: 250)
                         
-                        Text(item.title ?? "")
+                        Text(viewModel.item.title ?? "")
                             .font(.system(size: 24, weight: .bold))
                             .lineLimit(3)
                         
-                        Text(LocalizedStringKey(item.desc ?? ""))
+                        Text(LocalizedStringKey(viewModel.item.desc ?? ""))
                             .padding(.vertical)
                     }
                     .padding()
@@ -45,18 +45,18 @@ struct DetailTransactionView: View {
                         
                         Spacer()
                         
-                        Text(item.price?.currency ?? "")
+                        Text(viewModel.item.price?.currency ?? "")
                             .font(.system(size: 14, weight: .bold))
                     }
                     
-                    if let discount = item.discount {
+                    if let discount = viewModel.item.discount {
                         HStack {
                             Text(LocalizableString.Transactions.discount)
                                 .font(.system(size: 14, weight: .regular))
                             
                             Spacer()
                             
-                            Text("-"+"\(((Int(item.price ?? "0") ?? 0) * (discount) / 100))".currency)
+                            Text("-" + viewModel.totalDisc(price: viewModel.item.price ?? "0", disc: discount))
                                 .font(.system(size: 14, weight: .bold))
                                 .foregroundStyle(.red)
                         }
@@ -70,7 +70,7 @@ struct DetailTransactionView: View {
                         
                         Spacer()
                         
-                        Text(priceAfterDisc(price: item.price ?? "0", disc: item.discount ?? 0))
+                        Text(viewModel.priceAfterDisc(price: viewModel.item.price ?? "0", disc: viewModel.item.discount ?? 0))
                             .font(.system(size: 14, weight: .bold))
                     }
                     .padding(.bottom)
@@ -78,9 +78,9 @@ struct DetailTransactionView: View {
                     HStack {
                         Spacer()
                         
-                        Text(item.statusDesc ?? "")
+                        Text(viewModel.item.statusDesc ?? "")
                             .foregroundStyle(
-                                textStatusColor(status: item.status)
+                                viewModel.textStatusColor(status: viewModel.item.status)
                             )
                             .font(.system(size: 14, weight: .bold))
                         
@@ -89,7 +89,7 @@ struct DetailTransactionView: View {
                     .padding(.vertical, 5)
                     .frame(height: 48)
                     .background(
-                        backgroundStatusColor(status: item.status)
+                        viewModel.backgroundStatusColor(status: viewModel.item.status)
                     )
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
@@ -103,43 +103,18 @@ struct DetailTransactionView: View {
             }
         }
     }
-    
-    func priceAfterDisc(price: String, disc: Int) -> String {
-        let count = (Int(price) ?? 0) - (((Int(price) ?? 0) * disc / 100))
-        return String(count).currency
-    }
-    
-    func textStatusColor(status: BuyStatus?) -> Color {
-        switch status {
-        case .waitingForPayment:
-            return .orange
-        case .processed:
-            return .blue
-        case .onDelivery:
-            return .purple
-        case .delivered:
-            return .green
-        case .none:
-            return .orange
-        }
-    }
-    
-    func backgroundStatusColor(status: BuyStatus?) -> Color {
-        switch status {
-        case .waitingForPayment:
-            return Color.yellow.opacity(0.3)
-        case .processed:
-            return Color.blue.opacity(0.2)
-        case .onDelivery:
-            return Color.indigo.opacity(0.2)
-        case .delivered:
-            return Color.green.opacity(0.2)
-        case .none:
-            return Color.yellow.opacity(0.3)
-        }
-    }
 }
 
 #Preview {
-    DetailTransactionView(item: TransactionsViewModel.PresentModel(title: "test", picture: "", price: "10000", discount: 10, desc: "", status: BuyStatus.processed.rawValue))
+    DetailTransactionView(
+        viewModel: DetailTransactionsViewModel(
+            item: TransactionsViewModel.PresentModel(
+                title: "test",
+                picture: "",
+                price: "10000",
+                discount: 10,
+                desc: "", status: BuyStatus.processed.rawValue
+            )
+        )
+    )
 }

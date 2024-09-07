@@ -11,13 +11,15 @@
 		92BBB81D2C8B84920073323C /* TransactionsRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BBB81C2C8B84920073323C /* TransactionsRemoteDataSource.swift */; };
 		92BBB81F2C8B849E0073323C /* TransactionsDefaultRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BBB81E2C8B849E0073323C /* TransactionsDefaultRemoteDataSource.swift */; };
 		92BBB8212C8B91020073323C /* DetailTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BBB8202C8B91020073323C /* DetailTransactionView.swift */; };
+		92BBB8232C8BE3110073323C /* DetailTransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BBB8222C8BE3110073323C /* DetailTransactionsViewModel.swift */; };
+		92BBB8252C8BE4B50073323C /* DetailOfferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BBB8242C8BE4B50073323C /* DetailOfferViewModel.swift */; };
+		92BBB8272C8BE6880073323C /* TransactionsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BBB8262C8BE6880073323C /* TransactionsViewModelTests.swift */; };
+		92BBB8292C8BE92D0073323C /* DetailTransactionsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BBB8282C8BE92D0073323C /* DetailTransactionsViewModelTests.swift */; };
+		92BBB82B2C8BEA870073323C /* ShopsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BBB82A2C8BEA870073323C /* ShopsViewModelTests.swift */; };
 		92D510322C86B4B90024BADC /* ShopInstantApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510312C86B4B90024BADC /* ShopInstantApp.swift */; };
 		92D510342C86B4B90024BADC /* MainContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510332C86B4B90024BADC /* MainContainerView.swift */; };
 		92D510362C86B4BA0024BADC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92D510352C86B4BA0024BADC /* Assets.xcassets */; };
 		92D510392C86B4BA0024BADC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92D510382C86B4BA0024BADC /* Preview Assets.xcassets */; };
-		92D510432C86B4BA0024BADC /* ShopInstantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510422C86B4BA0024BADC /* ShopInstantTests.swift */; };
-		92D5104D2C86B4BA0024BADC /* ShopInstantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5104C2C86B4BA0024BADC /* ShopInstantUITests.swift */; };
-		92D5104F2C86B4BA0024BADC /* ShopInstantUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5104E2C86B4BA0024BADC /* ShopInstantUITestsLaunchTests.swift */; };
 		92D510632C86BDD40024BADC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 92D510622C86BDD40024BADC /* Localizable.xcstrings */; };
 		92D510652C86BE740024BADC /* LozalizableString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D510642C86BE740024BADC /* LozalizableString.swift */; };
 		92D5106C2C86BF4F0024BADC /* MainContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5106B2C86BF4F0024BADC /* MainContainerViewModel.swift */; };
@@ -51,13 +53,6 @@
 			remoteGlobalIDString = 92D5102D2C86B4B90024BADC;
 			remoteInfo = ShopInstant;
 		};
-		92D510492C86B4BA0024BADC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 92D510262C86B4B90024BADC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 92D5102D2C86B4B90024BADC;
-			remoteInfo = ShopInstant;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -65,16 +60,17 @@
 		92BBB81C2C8B84920073323C /* TransactionsRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRemoteDataSource.swift; sourceTree = "<group>"; };
 		92BBB81E2C8B849E0073323C /* TransactionsDefaultRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsDefaultRemoteDataSource.swift; sourceTree = "<group>"; };
 		92BBB8202C8B91020073323C /* DetailTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransactionView.swift; sourceTree = "<group>"; };
+		92BBB8222C8BE3110073323C /* DetailTransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransactionsViewModel.swift; sourceTree = "<group>"; };
+		92BBB8242C8BE4B50073323C /* DetailOfferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOfferViewModel.swift; sourceTree = "<group>"; };
+		92BBB8262C8BE6880073323C /* TransactionsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModelTests.swift; sourceTree = "<group>"; };
+		92BBB8282C8BE92D0073323C /* DetailTransactionsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransactionsViewModelTests.swift; sourceTree = "<group>"; };
+		92BBB82A2C8BEA870073323C /* ShopsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsViewModelTests.swift; sourceTree = "<group>"; };
 		92D5102E2C86B4B90024BADC /* ShopInstant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopInstant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D510312C86B4B90024BADC /* ShopInstantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopInstantApp.swift; sourceTree = "<group>"; };
 		92D510332C86B4B90024BADC /* MainContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainerView.swift; sourceTree = "<group>"; };
 		92D510352C86B4BA0024BADC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92D510382C86B4BA0024BADC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		92D5103E2C86B4BA0024BADC /* ShopInstantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShopInstantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		92D510422C86B4BA0024BADC /* ShopInstantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopInstantTests.swift; sourceTree = "<group>"; };
-		92D510482C86B4BA0024BADC /* ShopInstantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShopInstantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		92D5104C2C86B4BA0024BADC /* ShopInstantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopInstantUITests.swift; sourceTree = "<group>"; };
-		92D5104E2C86B4BA0024BADC /* ShopInstantUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopInstantUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		92D510622C86BDD40024BADC /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		92D510642C86BE740024BADC /* LozalizableString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LozalizableString.swift; sourceTree = "<group>"; };
 		92D5106B2C86BF4F0024BADC /* MainContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainerViewModel.swift; sourceTree = "<group>"; };
@@ -116,13 +112,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		92D510452C86B4BA0024BADC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -140,7 +129,6 @@
 			children = (
 				92D510302C86B4B90024BADC /* ShopInstant */,
 				92D510412C86B4BA0024BADC /* ShopInstantTests */,
-				92D5104B2C86B4BA0024BADC /* ShopInstantUITests */,
 				92D5102F2C86B4B90024BADC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -150,7 +138,6 @@
 			children = (
 				92D5102E2C86B4B90024BADC /* ShopInstant.app */,
 				92D5103E2C86B4BA0024BADC /* ShopInstantTests.xctest */,
-				92D510482C86B4BA0024BADC /* ShopInstantUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,18 +166,11 @@
 		92D510412C86B4BA0024BADC /* ShopInstantTests */ = {
 			isa = PBXGroup;
 			children = (
-				92D510422C86B4BA0024BADC /* ShopInstantTests.swift */,
+				92BBB8262C8BE6880073323C /* TransactionsViewModelTests.swift */,
+				92BBB8282C8BE92D0073323C /* DetailTransactionsViewModelTests.swift */,
+				92BBB82A2C8BEA870073323C /* ShopsViewModelTests.swift */,
 			);
 			path = ShopInstantTests;
-			sourceTree = "<group>";
-		};
-		92D5104B2C86B4BA0024BADC /* ShopInstantUITests */ = {
-			isa = PBXGroup;
-			children = (
-				92D5104C2C86B4BA0024BADC /* ShopInstantUITests.swift */,
-				92D5104E2C86B4BA0024BADC /* ShopInstantUITestsLaunchTests.swift */,
-			);
-			path = ShopInstantUITests;
 			sourceTree = "<group>";
 		};
 		92D5105B2C86BB8F0024BADC /* Common */ = {
@@ -297,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				92D510732C870F550024BADC /* ShopsViewModel.swift */,
+				92BBB8242C8BE4B50073323C /* DetailOfferViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -314,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				92D510792C870F800024BADC /* TransactionsViewModel.swift */,
+				92BBB8222C8BE3110073323C /* DetailTransactionsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -466,24 +448,6 @@
 			productReference = 92D5103E2C86B4BA0024BADC /* ShopInstantTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		92D510472C86B4BA0024BADC /* ShopInstantUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 92D510582C86B4BA0024BADC /* Build configuration list for PBXNativeTarget "ShopInstantUITests" */;
-			buildPhases = (
-				92D510442C86B4BA0024BADC /* Sources */,
-				92D510452C86B4BA0024BADC /* Frameworks */,
-				92D510462C86B4BA0024BADC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				92D5104A2C86B4BA0024BADC /* PBXTargetDependency */,
-			);
-			name = ShopInstantUITests;
-			productName = ShopInstantUITests;
-			productReference = 92D510482C86B4BA0024BADC /* ShopInstantUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -498,10 +462,6 @@
 						CreatedOnToolsVersion = 15.4;
 					};
 					92D5103D2C86B4BA0024BADC = {
-						CreatedOnToolsVersion = 15.4;
-						TestTargetID = 92D5102D2C86B4B90024BADC;
-					};
-					92D510472C86B4BA0024BADC = {
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 92D5102D2C86B4B90024BADC;
 					};
@@ -525,7 +485,6 @@
 			targets = (
 				92D5102D2C86B4B90024BADC /* ShopInstant */,
 				92D5103D2C86B4BA0024BADC /* ShopInstantTests */,
-				92D510472C86B4BA0024BADC /* ShopInstantUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -549,13 +508,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		92D510462C86B4BA0024BADC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -563,6 +515,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92BBB8232C8BE3110073323C /* DetailTransactionsViewModel.swift in Sources */,
 				92D510B02C8AEF480024BADC /* HTTPMethod.swift in Sources */,
 				92BBB81F2C8B849E0073323C /* TransactionsDefaultRemoteDataSource.swift in Sources */,
 				92D510712C870F470024BADC /* ShopsView.swift in Sources */,
@@ -590,6 +543,7 @@
 				92D5107E2C87FD640024BADC /* OfferCard.swift in Sources */,
 				92D510772C870F6C0024BADC /* TransactionsView.swift in Sources */,
 				92D510902C89699F0024BADC /* DetailOfferView.swift in Sources */,
+				92BBB8252C8BE4B50073323C /* DetailOfferViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,16 +551,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92D510432C86B4BA0024BADC /* ShopInstantTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		92D510442C86B4BA0024BADC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				92D5104F2C86B4BA0024BADC /* ShopInstantUITestsLaunchTests.swift in Sources */,
-				92D5104D2C86B4BA0024BADC /* ShopInstantUITests.swift in Sources */,
+				92BBB8292C8BE92D0073323C /* DetailTransactionsViewModelTests.swift in Sources */,
+				92BBB82B2C8BEA870073323C /* ShopsViewModelTests.swift in Sources */,
+				92BBB8272C8BE6880073323C /* TransactionsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,11 +564,6 @@
 			isa = PBXTargetDependency;
 			target = 92D5102D2C86B4B90024BADC /* ShopInstant */;
 			targetProxy = 92D5103F2C86B4BA0024BADC /* PBXContainerItemProxy */;
-		};
-		92D5104A2C86B4BA0024BADC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 92D5102D2C86B4B90024BADC /* ShopInstant */;
-			targetProxy = 92D510492C86B4BA0024BADC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -845,42 +787,6 @@
 			};
 			name = Release;
 		};
-		92D510592C86B4BA0024BADC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4KJR7MW4S2;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = id.co.testplayground.ShopInstantUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ShopInstant;
-			};
-			name = Debug;
-		};
-		92D5105A2C86B4BA0024BADC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4KJR7MW4S2;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = id.co.testplayground.ShopInstantUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ShopInstant;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -907,15 +813,6 @@
 			buildConfigurations = (
 				92D510562C86B4BA0024BADC /* Debug */,
 				92D510572C86B4BA0024BADC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		92D510582C86B4BA0024BADC /* Build configuration list for PBXNativeTarget "ShopInstantUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				92D510592C86B4BA0024BADC /* Debug */,
-				92D5105A2C86B4BA0024BADC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

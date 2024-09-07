@@ -92,4 +92,8 @@ final class ShopsViewModel: ObservableObject {
             print(error)
         }
     }
+    
+    func isItemsEmpty() -> Bool {
+        self.items.isEmpty
+    }
 }

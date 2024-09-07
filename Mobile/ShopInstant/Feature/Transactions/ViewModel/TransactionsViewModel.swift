@@ -52,6 +52,10 @@ final class TransactionsViewModel: ObservableObject {
         self.dataSource = dataSource
     }
     
+    func isItemsEmpty() -> Bool {
+        self.items.isEmpty
+    }
+    
     func refreshTrxs() {
         Task {
             await fetchTrx()

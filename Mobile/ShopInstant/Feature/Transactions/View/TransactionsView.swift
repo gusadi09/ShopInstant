@@ -15,7 +15,7 @@ struct TransactionsView: View {
         GeometryReader(content: { geometry in
             NavigationStack {
                 List {
-                    if viewModel.items.isEmpty {
+                    if viewModel.isItemsEmpty() {
                         VStack(spacing: 15) {
                             Image(systemName: "list.bullet.clipboard.fill")
                                 .resizable()
@@ -49,7 +49,9 @@ struct TransactionsView: View {
                     viewModel.refreshTrxs()
                 }
                 .sheet(item: $viewModel.selectedItem, content: { item in
-                    DetailTransactionView(item: item)
+                    DetailTransactionView(
+                        viewModel: DetailTransactionsViewModel(item: item)
+                    )
                 })
                 .listStyle(.plain)
                 .task {

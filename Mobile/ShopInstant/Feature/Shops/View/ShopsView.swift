@@ -56,10 +56,13 @@ struct ShopsView: View {
                                                     isLoading: $viewModel.isLoading,
                                                     isSuccess: $viewModel.successToBuy,
                                                     error: $viewModel.error,
-                                                    item: item
-                                                ) {
-                                                    viewModel.onBuyPressed(from: item)
-                                                }
+                                                    viewModel: DetailOfferViewModel(
+                                                        item: item,
+                                                        buyAction: {
+                                                            viewModel.onBuyPressed(from: item)
+                                                        }
+                                                    )
+                                                )
                                             }
                                     }
                                 }

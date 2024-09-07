@@ -11,8 +11,8 @@ struct DetailOfferView: View {
     @Binding var isLoading: Bool
     @Binding var isSuccess: Bool
     @Binding var error: (Bool, String?)
-    let item: ShopsViewModel.PresentModel
-    let buyAction: () -> Void
+    
+    @StateObject var viewModel: DetailOfferViewModel
     
     var body: some View {
         ZStack {
@@ -21,7 +21,7 @@ struct DetailOfferView: View {
                     LazyVStack(alignment: .leading, spacing: 10) {
                         GeometryReader(content: { geometry in
                             WebImageLoaderView(
-                                url: item.picture ?? "empty",
+                                url: viewModel.item.picture ?? "empty",
                                 width: geometry.size.width,
                                 height: geometry.size.height,
                                 aspectRatio: .fill
@@ -38,17 +38,17 @@ struct DetailOfferView: View {
                             )
                         })
                         
-                        Text(item.title ?? "")
+                        Text(viewModel.item.title ?? "")
                             .font(.system(size: 24, weight: .bold))
                             .lineLimit(3)
                         
                         VStack(alignment: .leading, spacing: 4) {
                             HStack(spacing: 10) {
-                                Text(item.price?.currency ?? "")
+                                Text(viewModel.item.price?.currency ?? "")
                                     .strikethrough(true, pattern: .solid, color: .red)
                                     .font(.system(size: 18, weight: .regular))
                                 
-                                if let discount = item.discount {
+                                if let discount = viewModel.item.discount {
                                     Text("\(discount)%")
                                         .font(.system(size: 14, weight: .semibold))
                                         .foregroundStyle(.pink)
@@ -60,21 +60,21 @@ struct DetailOfferView: View {
                                 }
                             }
                             
-                            if let discount = item.discount {
-                                Text(priceAfterDisc(price: item.price ?? "", disc: discount))
+                            if let discount = viewModel.item.discount {
+                                Text(viewModel.priceAfterDisc(price: viewModel.item.price ?? "", disc: discount))
                                     .font(.system(size: 24, weight: .bold))
                                     .foregroundStyle(.red)
                             }
                         }
                         
-                        Text(LocalizedStringKey(item.desc ?? ""))
+                        Text(LocalizedStringKey(viewModel.item.desc ?? ""))
                             .padding(.vertical)
                     }
                     .padding()
                 }
                 
                 VStack {
-                    Button(action: buyAction, label: {
+                    Button(action: viewModel.buyAction, label: {
                         Text(LocalizableString.Offers.buyNow)
                     })
                     .buttonStyle(PrimaryButton(height: 48, bgColor: .black, textColor: .yellow))
@@ -101,13 +101,8 @@ struct DetailOfferView: View {
             }
         }
     }
-    
-    func priceAfterDisc(price: String, disc: Int) -> String {
-        let count = (Int(price) ?? 0) - (((Int(price) ?? 0) * disc / 100))
-        return String(count).currency
-    }
 }
 
 #Preview {
-    DetailOfferView(isLoading: .constant(false), isSuccess: .constant(false), error: .constant((false, nil)), item: ShopsViewModel.PresentModel(title: "test", picture: "", price: "10000", discount: 10, desc: ""), buyAction: {})
+    DetailOfferView(isLoading: .constant(false), isSuccess: .constant(false), error: .constant((false, nil)), viewModel: DetailOfferViewModel(item: ShopsViewModel.PresentModel(title: "test", picture: "", price: "10000", discount: 10, desc: ""), buyAction: {}))
 }
