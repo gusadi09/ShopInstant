@@ -14,3 +14,14 @@
 - View will be represented by SwiftUI View that will accepts data change from ViewModel to update the UI and able to send action to the ViewModel
 - ViewModel will be ObservableObject that accepts action from SwiftUI View and execute to business logic process
 - Model will be the the structure for the data from network
+
+
+**================== SERVER-SIDE ========================**
+
+**FRAMEWORK**
+<br>Vapor (Swift)
+
+**HOW TO RUN**
+1. Clone the repo
+2. Open terminal on server folder
+3. run with docker compose up
